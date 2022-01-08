@@ -4,7 +4,7 @@ import RSVP from "../components/rsvp";
 export default function Home() {
   return (
     <Layout title="A wedding is occurring">
-      <div>
+      <div className="lg:sticky top-24">
         <h1 className="text-4xl font-extrabold tracking-tight font-sans mb-4">
           a wedding is occurring
         </h1>
@@ -23,7 +23,9 @@ export default function Home() {
         </p>
         <h2 className="text-xl mt-8">Please RSVP</h2>
       </div>
-      <RSVP/>
+      <div>
+        <RSVP />
+      </div>
     </Layout>
   );
 }

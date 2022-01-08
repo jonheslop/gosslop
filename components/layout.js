@@ -25,7 +25,7 @@ export default function Layout({title, children}) {
         <rect width="100%" height="100%" filter="url(#noise)"></rect>
       </svg>
 
-      <main className="grid grid-cols-2 gap-16 items-start w-full flex-1 px-24 py-16 z-10 text-stone/70">
+      <main className="grid grid-cols-1 lg:grid-cols-2 sm:gap-8 lg:gap-16 items-start w-full flex-1 px-2 sm:px-12 lg:px-24 py-4 sm:py-16 z-10 text-stone/70">
         {children}
       </main>
     </div>
