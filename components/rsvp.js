@@ -44,7 +44,7 @@ export default function RSVP() {
   }
 
   if (!complete) return (
-    <form onSubmit={(e) => handleSubmit(e)}>
+    <form onSubmit={(e) => handleSubmit(e)} className="lg:mt-96">
       <Heading id="RSVP">Please RSVP</Heading>
       <Input name="name" label="Name" placeholder="The Smiths" />
       <Input

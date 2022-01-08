@@ -20,14 +20,22 @@ export default function Home() {
           </Link>
         </p>
       </div>
-      <div className="lg:col-span-2 lg:mt-96">
+      <div className="lg:col-span-2">
         <RSVP />
+        <div className="mt-24">
+          <Heading id="Schedule">The schedule</Heading>
+          <p className="mt-8 sm:text-xl leading-normal max-w-xl">
+            This is a work in progress. The ceremony will be in the library at
+            2pm. Afterwards we will move to the main hall for dinner, drinks and
+            dancing until 2am. We will update this closer to the date.
+          </p>
+        </div>
         <div className="mt-24">
           <Heading id="Accomodation">Nearby accomodation</Heading>
           <p className="mt-8 sm:text-xl leading-normal max-w-xl">
-            Conway Hall is centrally located in between Holborn and Bloomsbury.
-            There are plenty of hotels in the area. But the nearest is a Premier
-            Inn, within 3 minutes walk.
+            Conway Hall is in central London, located in between Holborn and
+            Bloomsbury. There are plenty of hotels in the area. But the nearest
+            is a Premier Inn.
           </p>
 
           <ul className="list list-disc list-inside space-y-2 sm:text-xl mt-8">
@@ -54,21 +62,14 @@ export default function Home() {
           </ul>
         </div>
         <div className="mt-24">
-          <Heading id="Schedule">The schedule</Heading>
-          <p className="mt-8 sm:text-xl leading-normal max-w-xl">
-            This is a work in progress. But the please arrive at 2pm for a
-            2:30pm ceremony in the library. Afterwards we’ll move to the main
-            hall for dinner, drinks and dancing. We have the venue until 2am.
-          </p>
-        </div>
-        <div className="mt-24">
           <Heading id="Invites">How we made the invites</Heading>
           <p className="mt-8 sm:text-xl leading-normal max-w-xl">
-            We printed the invites in Bristol, on January 2 2022 at{' '}
+            We printed the invites in Bristol, on 2 January 2022 with our
+            friends Nick and Harriet at{' '}
             <Link href="https://www.departmentofsmallworks.co.uk/letterpress">
               The Letterpress Collective
-            </Link>{' '}
-            with our friends Nick and Harriet. We had a lot of fun doing it.
+            </Link>
+            . We had a lot of fun doing it.
           </p>
 
           <div className="grid grid-cols-2 gap-x-2 gap-y-1 my-8">

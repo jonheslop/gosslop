@@ -6,8 +6,8 @@ import useActiveSection from '../hooks/use-active-section';
 
 const navLinks = [
   { label: 'RSVP', slug: 'RSVP' },
-  { label: 'Accomodation', slug: 'Accomodation' },
   { label: 'Schedule', slug: 'Schedule' },
+  { label: 'Accomodation', slug: 'Accomodation' },
   { label: 'The invites', slug: 'Invites' },
 ];
 
