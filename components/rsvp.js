@@ -1,7 +1,8 @@
 import React, { Fragment, useState } from 'react';
-import Input from '../components/input';
-import TextArea from '../components/textarea';
-import Radio from '../components/radio';
+import Input from './input';
+import TextArea from './textarea';
+import Radio from './radio';
+import Heading from './heading';
 
 export default function RSVP() {
   const [attending, setAttending] = useState(false);
@@ -43,71 +44,72 @@ export default function RSVP() {
   }
 
   if (!complete) return (
-      <form onSubmit={(e) => handleSubmit(e)}>
-        <Input name="name" label="Name" placeholder="The Smiths" />
-        <Input
-          name="email"
-          label="Email address"
-          type="email"
-          placeholder="name@email.com"
+    <form onSubmit={(e) => handleSubmit(e)}>
+      <Heading id="RSVP">Please RSVP</Heading>
+      <Input name="name" label="Name" placeholder="The Smiths" />
+      <Input
+        name="email"
+        label="Email address"
+        type="email"
+        placeholder="name@email.com"
+      />
+
+      <fieldset className="mt-4">
+        <legend className="text-xl">Are you attending?</legend>
+        <Radio
+          label="Yes"
+          name="attending"
+          value="yes"
+          onChange={() => setAttending(true)}
         />
+        <Radio
+          label="No"
+          name="attending"
+          value="no"
+          onChange={() => setAttending(false)}
+        />
+      </fieldset>
 
-        <fieldset className="mt-4">
-          <legend className="text-xl">Are you attending?</legend>
-          <Radio
-            label="Yes"
-            name="attending"
-            value="yes"
-            onChange={() => setAttending(true)}
+      {attending && (
+        <Fragment>
+          <Input
+            name="count"
+            classes="w-32"
+            label="Number of people"
+            inputMode="numeric"
+            pattern="[0-9]*"
           />
-          <Radio
-            label="No"
-            name="attending"
-            value="no"
-            onChange={() => setAttending(false)}
+          <TextArea
+            name="dietary"
+            label="Dietary requirements"
+            placeholder="Vegan"
           />
-        </fieldset>
-
-        {attending && (
-          <Fragment>
-            <Input
-              name="count"
-              classes="w-32"
-              label="Number of people"
-              inputMode="numeric"
-              pattern="[0-9]*"
-            />
-            <TextArea
-              name="dietary"
-              label="Dietary requirements"
-              placeholder="Vegan"
-            />
-          </Fragment>
+        </Fragment>
+      )}
+      <button className="block py-2 px-12 text-xl focus:ring ring-hinterland/50 outline-none rounded text-white/80 placeholder-stone-300 bg-stone-400 mt-8 hover:bg-hinterland transition-colors">
+        {pending && (
+          <span className="block w-8 h-8 border-4 rounded-full border-white border-r-transparent animate-spin flex-shrink-0">
+            <span className="sr-only">Loading</span>
+          </span>
         )}
-        <button className="block py-2 px-12 text-xl focus:ring ring-hinterland/50 outline-none rounded text-white/80 placeholder-stone-300 bg-stone-400 mt-8 hover:bg-hinterland transition-colors">
-          {pending && (
-            <span className="block w-8 h-8 border-4 rounded-full border-white border-r-transparent animate-spin flex-shrink-0">
-              <span className="sr-only">Loading</span>
-            </span>
-          )}
-          {!pending && 'Submit'}
-        </button>
-      </form>
-    );
+        {!pending && 'Submit'}
+      </button>
+    </form>
+  );
 
   if (complete) return (
-      <div>
-        {attending && (
-          <p className="text-xl leading-normal">
-            <span className="text-4xl block mb-2">🎉</span> Thank you! We’re so
-            excited to have you.
-          </p>
-        )}
-        {!attending && (
-          <p className="text-xl leading-normal">
-            Thanks, we’re sorry you can’t make it.
-          </p>
-        )}
-      </div>
-    );
+    <div id="RSVP">
+      {attending && (
+        <p className="text-xl leading-normal">
+          <span className="text-4xl block mb-2">🎉</span> Thank you! We’re so
+          excited to have you.
+        </p>
+      )}
+      {!attending && (
+        <p className="text-xl leading-normal">
+          Thanks, we’re sorry you can’t make it.
+        </p>
+      )}
+    </div>
+  );
 }
