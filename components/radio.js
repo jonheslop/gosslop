@@ -20,7 +20,7 @@ export default function Radio({
         {...attributes}
       />
       <label
-        className="ml-3 mt-[3px] leading-none cursor-pointer text-xl"
+        className="ml-3 mt-[3px] leading-none cursor-pointer sm:text-xl"
         htmlFor={id}
       >
         {label}

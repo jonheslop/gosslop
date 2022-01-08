@@ -1,62 +1,36 @@
 import React, { Fragment, useState } from 'react';
 import Image from "next/image";
+import Link from '../components/link';
 import Layout from '../components/layout';
 import RSVP from '../components/rsvp';
 import Heading from '../components/heading';
-import Link from '../components/link';
-import useActiveSection from '../hooks/use-active-section';
-
-const navLinks = [
-  { label: 'RSVP', slug: 'RSVP' },
-  { label: 'Accomodation', slug: 'Accomodation' },
-  { label: 'Schedule', slug: 'Schedule' },
-  { label: 'Making the invites', slug: 'Invites' },
-];
 
 export default function Home() {
-  const activeSection = useActiveSection(navLinks.map((i) => i.slug));
   return (
     <Layout title="A wedding is occurring">
-      <nav className="sticky top-4 lg:top-16 mt-14 mb-8 z-50">
-        <ul className="flex lg:flex-col gap-2">
-          {navLinks.map((item, i) => (
-            <li key={i}>
-              <a
-                className={`text-xl ${
-                  activeSection === item.slug
-                    ? 'text-stone-600'
-                    : 'text-hinterland'
-                } hover:underline decoration-dotted decoration-2 underline-offset-2 hover:text-stone-600 transition-colors`}
-                href={`#${item.slug}`}
-              >
-                {item.label}
-              </a>
-            </li>
-          ))}
-        </ul>
-      </nav>
-      <div className="col-span-2 lg:sticky top-8 mb-8">
-        <h1 className="text-4xl font-extrabold tracking-tight font-sans mb-4">
-          Bec and Jon
-        </h1>
-        <p className="text-xl leading-normal">Friday 7 October 2022</p>
-        <p className="text-xl leading-normal">
+      <h1 className="lg:col-span-4 text-3xl lg:text-9xl font-extrabold lg:font-black tracking-tight font-sans mb-4">
+        Bec &amp; Jon get married
+      </h1>
+
+      <div className="lg:col-span-2 lg:sticky top-24 mb-8">
+        <p className="sm:text-xl leading-normal">Friday 7 October 2022</p>
+        <p className="sm:text-xl leading-normal">
           <Link href="https://g.page/conwayhall">
             Conway Hall, Red Lion Square, London
           </Link>
         </p>
       </div>
-      <div className="col-span-2">
+      <div className="lg:col-span-2 lg:mt-96">
         <RSVP />
         <div className="mt-24">
-          <Heading id="Accomodation">Accomodation</Heading>
-          <p className="mt-8 text-xl leading-normal max-w-lg">
+          <Heading id="Accomodation">Nearby accomodation</Heading>
+          <p className="mt-8 sm:text-xl leading-normal max-w-xl">
             Conway Hall is centrally located in between Holborn and Bloomsbury.
             There are plenty of hotels in the area. But the nearest is a Premier
             Inn, within 3 minutes walk.
           </p>
 
-          <ul className="list list-disc list-inside space-y-2 text-xl mt-8">
+          <ul className="list list-disc list-inside space-y-2 sm:text-xl mt-8">
             <li>
               <Link href="https://www.premierinn.com/gb/en/hotels/england/greater-london/london/london-holborn.html">
                 Premier Inn Holborn, ~3 mins walk
@@ -80,8 +54,8 @@ export default function Home() {
           </ul>
         </div>
         <div className="mt-24">
-          <Heading id="Schedule">Schedule</Heading>
-          <p className="mt-8 text-xl leading-normal max-w-lg">
+          <Heading id="Schedule">The schedule</Heading>
+          <p className="mt-8 sm:text-xl leading-normal max-w-xl">
             This is a work in progress. But the please arrive at 2pm for a
             2:30pm ceremony in the library. Afterwards we’ll move to the main
             hall for dinner, drinks and dancing. We have the venue until 2am.
@@ -89,7 +63,7 @@ export default function Home() {
         </div>
         <div className="mt-24">
           <Heading id="Invites">How we made the invites</Heading>
-          <p className="mt-8 text-xl leading-normal max-w-lg">
+          <p className="mt-8 sm:text-xl leading-normal max-w-xl">
             We printed the invites in Bristol, on January 2 2022 at{' '}
             <Link href="https://www.departmentofsmallworks.co.uk/letterpress">
               The Letterpress Collective
@@ -97,7 +71,7 @@ export default function Home() {
             with our friends Nick and Harriet. We had a lot of fun doing it.
           </p>
 
-          <div className="grid grid-cols-2 gap-4 lg:gap-2 my-8">
+          <div className="grid grid-cols-2 gap-x-2 gap-y-1 my-8">
             <figure className="col-span-2">
               <Image
                 width="1008"

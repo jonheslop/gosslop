@@ -55,14 +55,16 @@ export default function RSVP() {
       />
 
       <fieldset className="mt-4">
-        <legend className="text-xl">Are you attending?</legend>
+        <legend className="sm:text-xl">Are you attending?</legend>
         <Radio
+          id="yes"
           label="Yes"
           name="attending"
           value="yes"
           onChange={() => setAttending(true)}
         />
         <Radio
+          id="no"
           label="No"
           name="attending"
           value="no"
@@ -86,7 +88,7 @@ export default function RSVP() {
           />
         </Fragment>
       )}
-      <button className="block py-2 px-12 text-xl focus:ring ring-hinterland/50 outline-none rounded text-white/80 placeholder-stone-300 bg-stone-400 mt-8 hover:bg-hinterland transition-colors">
+      <button className="block py-2 px-12 sm:text-xl focus:ring ring-hinterland/50 outline-none rounded text-white/80 placeholder-stone-300 bg-stone-400 mt-8 hover:bg-hinterland transition-colors">
         {pending && (
           <span className="block w-8 h-8 border-4 rounded-full border-white border-r-transparent animate-spin flex-shrink-0">
             <span className="sr-only">Loading</span>
@@ -100,13 +102,13 @@ export default function RSVP() {
   if (complete) return (
     <div id="RSVP">
       {attending && (
-        <p className="text-xl leading-normal">
+        <p className="sm:text-xl leading-normal">
           <span className="text-4xl block mb-2">🎉</span> Thank you! We’re so
           excited to have you.
         </p>
       )}
       {!attending && (
-        <p className="text-xl leading-normal">
+        <p className="sm:text-xl leading-normal">
           Thanks, we’re sorry you can’t make it.
         </p>
       )}

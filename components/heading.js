@@ -1,7 +1,7 @@
 export default function Heading({id, children}) {
   return (
     <h2
-      className="text-4xl text-stone-400 font-extrabold font-sans tracking-tight"
+      className="text-3xl sm:text-4xl text-hinterland font-extrabold font-sans tracking-tight"
       id={id}
     >
       {children}
