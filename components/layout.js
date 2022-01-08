@@ -22,13 +22,12 @@ export default function Layout({ title, children }) {
 
       <main className="grid grid-cols-1 lg:grid-cols-4 gap-4 xl:gap-16 items-start w-full flex-1 px-2 sm:px-12 z-10 text-stone/70">
         <nav className="bg-stone-100 lg:col-span-4 w-full sticky top-0 py-4 mb-16 z-50">
-          <ul className="flex justify-between lg:grid lg:grid-cols-4 gap-4 xl:gap-16 text-center">
+          <ul className="flex justify-between lg:grid lg:grid-cols-4 gap-4 xl:gap-16">
             {navLinks.map((item, i) => (
               <li
                 key={i}
                 className={cn({
                   'text-right': i === navLinks.length - 1,
-                  'text-left': i === 0,
                 })}
               >
                 <a
