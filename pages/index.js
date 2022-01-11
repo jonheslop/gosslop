@@ -16,7 +16,8 @@ export default function Home() {
         <p className="sm:text-xl leading-normal">Friday 7 October 2022</p>
         <p className="sm:text-xl leading-normal">
           <Link href="https://g.page/conwayhall">
-            Conway Hall, Red Lion Square, London
+            Conway Hall, Red Lion Square,{' '}
+            <span className="lowercase" style={{ fontVariantCaps: "small-caps"}}>WC1R 4RL</span>
           </Link>
         </p>
       </div>
@@ -27,7 +28,7 @@ export default function Home() {
           <p className="mt-8 sm:text-xl leading-normal max-w-xl">
             This is a work in progress. The ceremony will be in the library at
             2pm. Afterwards we will move to the main hall for dinner, drinks and
-            dancing until 2am. We will update this closer to the date.
+            dancing until 2am. We will update this closer with more details to the date.
           </p>
         </div>
         <div className="mt-24">
@@ -41,18 +42,21 @@ export default function Home() {
           <ul className="list list-disc list-inside space-y-2 sm:text-xl mt-8">
             <li>
               <Link href="https://www.premierinn.com/gb/en/hotels/england/greater-london/london/london-holborn.html">
-                Premier Inn Holborn, ~3 mins walk
-              </Link>
+                Premier Inn Holborn,
+              </Link>{' '}
+              ~3 mins walk
             </li>
             <li>
               <Link href="https://www.hilton.com/en/hotels/lhrlbdi-doubletree-london-west-end/">
-                DoubleTree Hilton, ~5 mins walk
-              </Link>
+                DoubleTree Hilton,
+              </Link>{' '}
+              ~5 mins walk
             </li>
             <li>
               <Link href="https://www.google.co.uk/maps/place/Premier+Inn+London+Holborn+hotel/@51.5174496,-0.1256104,16z/data=!4m14!1m2!2m1!1shotels+near+WC1R+4RL!3m10!1s0x48761b4a0f186a89:0x9201682bbf968fc1!5m3!1s2022-10-07!4m1!1i2!8m2!3d51.5201338!4d-0.1173205!15sChRob3RlbHMgbmVhciBXQzFSIDRSTJIBBWhvdGVs!16s%2Fg%2F1q62fnrr6">
-                Loads more hotels in the area, ~15 mins walk
-              </Link>
+                Loads more hotels in the area,
+              </Link>{' '}
+              ~15 mins walk
             </li>
             <li>
               <Link href="https://www.airbnb.co.uk/s/WC1R-4RL/homes?tab_id=home_tab&refinement_paths[]=%2Fhomes&flexible_trip_dates[]=february&flexible_trip_dates[]=january&flexible_trip_lengths[]=weekend_trip&date_picker_type=calendar&checkin=2022-10-07&checkout=2022-10-08&source=structured_search_input_header&search_type=filter_change">
